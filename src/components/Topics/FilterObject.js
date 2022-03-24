@@ -21,12 +21,14 @@ export default class FilterObjects extends Component {
   }
 
   filterArray() {
-    const filteredName = this.state.unFilteredArray.filter((person) => person.name === this.state.userInput)
-    console.log(filteredName)
+    const filteredName = this.state.unFilteredArray.filter(
+      (person) => person.name === this.state.userInput
+    );
+    console.log(filteredName);
     if (filteredName.length === 1) {
-      this.setState({filteredArray: filteredName})
+      this.setState({ filteredArray: filteredName });
     } else {
-      this.setState({filteredArray: "Person Not Here"})
+      this.setState({ filteredArray: "Person Not Here" });
     }
   }
 
@@ -34,7 +36,9 @@ export default class FilterObjects extends Component {
     return (
       <div className="puzzleBox filterObjectPB">
         <h4>Filter Object</h4>
-        <span className="puzzleText">{JSON.stringify(this.state.unFilteredArray)}</span>
+        <span className="puzzleText">
+          {JSON.stringify(this.state.unFilteredArray)}
+        </span>
         <input
           className="inputLine"
           onChange={(e) => this.setState({ userInput: e.target.value })}
@@ -42,7 +46,9 @@ export default class FilterObjects extends Component {
         <button className="confirmationButton" onClick={this.filterArray}>
           Filter
         </button>
-        <span className="resultsBox filterOjbectRB">{JSON.stringify(this.state.filteredArray)}</span>
+        <span className="resultsBox filterOjbectRB">
+          {JSON.stringify(this.state.filteredArray)}
+        </span>
       </div>
     );
   }

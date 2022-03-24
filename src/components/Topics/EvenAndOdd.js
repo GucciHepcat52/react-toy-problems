@@ -40,8 +40,12 @@ export default class EvenAndOdd extends Component {
         <button className="confirmationButton" onClick={this.splitNums}>
           Submit
         </button>
-        <span className="resultsBox">{JSON.stringify(this.state.evenArray)}</span>
-        <span className="resultsBox">{JSON.stringify(this.state.oddArray)}</span>
+        <span className="resultsBox">
+          {JSON.stringify(this.state.evenArray)}
+        </span>
+        <span className="resultsBox">
+          {JSON.stringify(this.state.oddArray)}
+        </span>
       </div>
     );
   }

@@ -12,21 +12,29 @@ export default class FilterString extends Component {
   }
 
   filterArray() {
-    const foundStrings = this.state.unFilteredArray.filter((string) => string.includes(this.state.userInput))
-    this.setState({filteredArray: foundStrings})
+    const foundStrings = this.state.unFilteredArray.filter((string) =>
+      string.includes(this.state.userInput)
+    );
+    this.setState({ filteredArray: foundStrings });
   }
 
   render() {
     return (
       <div className="puzzleBox filterStringPB">
         <h4>Filter String</h4>
-        <span className="puzzleText">{JSON.stringify(this.state.unFilteredArray)}</span>
+        <span className="puzzleText">
+          {JSON.stringify(this.state.unFilteredArray)}
+        </span>
         <input
           className="inputLine"
           onChange={(e) => this.setState({ userInput: e.target.value })}
         />
-        <button className="confirmationButton" onClick={this.filterArray}>Filter</button>
-        <span className="resultsBox filterStringRB">{JSON.stringify(this.state.filteredArray)}</span>
+        <button className="confirmationButton" onClick={this.filterArray}>
+          Filter
+        </button>
+        <span className="resultsBox filterStringRB">
+          {JSON.stringify(this.state.filteredArray)}
+        </span>
       </div>
     );
   }
